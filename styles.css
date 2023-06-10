@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  cursor: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 144rem;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+.wrapper .calculator {
+  background-color: black;
+  max-width: 90rem;
+  min-height: 70rem;
+  border-radius: 2rem 2rem 20rem 2rem;
+  border: 2px solid white;
+  padding: 6rem 6rem 4rem 6rem;
+  width: 100%;
+}
+.wrapper .form-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-width: 100%;
+  min-height: 40%;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid white;
+}
+.wrapper .form-container .month-header,
+.wrapper .form-container .year-header,
+.wrapper .form-container .day-header {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+.wrapper .form-container .hcolor {
+  color: #ffffff;
+}
+.wrapper .form-container input::-webkit-outer-spin-button,
+.wrapper .form-container input::-webkit-inner-spin-button {
+  display: none;
+}
+.wrapper .form-container .birth-day,
+.wrapper .form-container .birth-month,
+.wrapper .form-container .birth-year {
+  min-height: 7rem;
+  max-width: 18rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: start;
+  padding-left: 2.5rem;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.wrapper .form-container .birth-day,
+.wrapper .form-container .birth-month,
+.wrapper .form-container .birth-year:focus {
+  outline-color: rgb(155, 61, 255);
+}
+.wrapper .form-container .arrow-button {
+  transform: translate(5.5rem, 10.5rem);
+}
+.wrapper .form-container .arrow-button .btn {
+  background: rgb(0, 0, 0);
+  padding: 4rem;
+  border: 3px solid rgb(155, 61, 255);
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.wrapper .form-container .arrow-button .btn:hover {
+  background-color: rgb(155, 61, 255);
+}
+.wrapper .age-container {
+  font-size: 8rem;
+  font-weight: 800;
+  font-style: italic;
+  padding-top: 3rem;
+}
+.wrapper .age-container h2 {
+  color: #ffffff;
+}
+.wrapper .age-container span {
+  color: rgb(155, 61, 255);
+  letter-spacing: 2rem;
+}
+
+.cursor {
+  height: 9rem;
+  width: 9rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 99;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.cursor-big {
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(155, 61, 255);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.year-container:hover ~ .cursor {
+  transform: scale(3) translate(-18%, -18%);
+}
+
+.month-container:hover ~ .cursor {
+  transform: scale(3) translate(-18%, -18%);
+}
+
+.day-container:hover ~ .cursor {
+  transform: scale(3) translate(-18%, -18%);
+}
+
+.arrow-button:hover ~ .cursor {
+  transform: scale(2) translate(-25%, -25%);
+}
+
+.error {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  color: #ff0000;
+  overflow: hidden;
+}
+
+.invalid {
+  text-align: center;
+  color: #ff00bf;
+  font-size: 1.4rem;
+}
+
+.invalid-header {
+  color: #ff00bf;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.invalid-outline {
+  border: 1px solid #ff00bf;
+}
+
+.invalid-outline:focus {
+  outline: 3px solid #ff00bf;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 815px) {
+  .wrapper .calculator {
+    background-color: black;
+    max-width: 90rem;
+    min-height: 70rem;
+    border-radius: 2rem;
+    border: 2px solid white;
+    padding: 6rem 6rem 4rem 6rem;
+    width: 100%;
+  }
+  .wrapper .form-container .birth-day,
+  .wrapper .form-container .birth-month,
+  .wrapper .form-container .birth-year {
+    min-height: 7rem;
+    max-width: 50rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: start;
+    padding-left: 2.5rem;
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .wrapper .form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 0rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    border: none;
+  }
+  .wrapper .form-container .birth-day,
+  .wrapper .form-container .birth-month,
+  .wrapper .form-container .birth-year {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0;
+  }
+  .wrapper .form-container .arrow-button {
+    grid-row: 2;
+    grid-column: 1/4;
+    transform: none;
+  }
+  .wrapper .form-container .arrow-button .btn {
+    background: rgb(0, 0, 0);
+    padding: 4rem;
+    width: 100%;
+    border: 3px solid rgb(155, 61, 255);
+    border-radius: 2rem;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+  .wrapper .age-container .months {
+  }
+  .wrapper .age-container h2 {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    font-size: clamp(10vw, 100%, 1rem);
+    text-align: center;
+  }
+  .wrapper .age-container span {
+    color: rgb(155, 61, 255);
+    letter-spacing: 2rem;
+  }
+} /*# sourceMappingURL=styles.css.map */
